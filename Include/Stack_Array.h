@@ -1,12 +1,12 @@
 #define INIT_SIZE 10
 
 typedef struct Stack_Array {
-    void* elements[INIT_SIZE];
+    void** elements;
     int pointer;
     int size;
 }Stack_Array;
 
-void initialiseStack(Stack_Array* stack);
+void initialiseStack(Stack_Array* stack, int size);
 
 void push(Stack_Array* stack, void* element);
 void* pop(Stack_Array* stack);

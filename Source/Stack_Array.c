@@ -1,10 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "..\Include\Stack_Array.h"
 
-void initialiseStack(Stack_Array* stack)
+void initialiseStack(Stack_Array* stack,  int size)
 {
     stack->pointer = -1;
-    stack->size = sizeof(stack->elements) / sizeof(void*);
+    stack->elements = malloc(size * sizeof(void*));
+    stack->size = size;
 }
 
 void push(Stack_Array* stack, void* element)
